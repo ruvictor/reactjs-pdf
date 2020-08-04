@@ -15,14 +15,14 @@ const styles = StyleSheet.create({
 });
 
 // Create Document Component
-const MyDocument = () => (
+const MyDocument = (props) => (
   <Document title="Test">
     <Page size="A4" style={styles.page}>
       <View style={styles.section}>
-        <Text>Section #1</Text>
+        <Text>{props.title}</Text>
       </View>
       <View style={styles.section}>
-        <Text>Section #2</Text>
+        <Text>{props.content}</Text>
       </View>
     </Page>
   </Document>
