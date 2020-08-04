@@ -1,14 +1,11 @@
 import React from 'react';
 import './App.css';
-import { PDFViewer } from '@react-pdf/renderer';
-import PDF from './components/PDF';
+import Post from './components/Post';
 
 function App() {
   return (
     <div className="App">
-      <PDFViewer>
-        <PDF />
-      </PDFViewer>
+      <Post />
     </div>
   );
 }
