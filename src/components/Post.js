@@ -6,6 +6,7 @@ class Post extends Component {
     state = {
         title: '',
         content: '',
+        image: '',
         postSubmitted: false
     }
 
@@ -32,7 +33,7 @@ class Post extends Component {
             <>
                 {  !this.state.postSubmitted ? 
                     (<div className="container">
-                        <div class="jumbotron mt-3">
+                        <div className="jumbotron mt-3">
                             <div className="row">
                                 <div className="col-md-12">
                                     <div className="well well-sm">
@@ -41,14 +42,18 @@ class Post extends Component {
                                                 <legend className="text-center header">Add new Post</legend>
                                                 <div className="form-group">
                                                     <span className="col-md-1 col-md-offset-2 text-center"><i className="fa fa-user bigicon"></i></span>
-                                                    <input id="fname" onChange={this.onChange('title')} name="name" type="text" placeholder="Post Title" className="form-control" />
+                                                    <input onChange={this.onChange('title')} name="title" type="text" placeholder="Post Title" className="form-control" />
+                                                </div>
+                                                <div className="form-group">
+                                                    <span className="col-md-1 col-md-offset-2 text-center"><i className="fa fa-user bigicon"></i></span>
+                                                    <input onChange={this.onChange('image')} name="image" type="text" placeholder="https://" className="form-control" />
                                                 </div>
                                                 <div className="form-group">
                                                     <span className="col-md-1 col-md-offset-2 text-center"><i className="fa fa-pencil-square-o bigicon"></i></span>
-                                                    <textarea onChange={this.onChange('content')} className="form-control" id="message" name="message" placeholder="Enter your text here" rows="7"></textarea>
+                                                    <textarea onChange={this.onChange('content')} className="form-control" name="content" placeholder="Enter your text here" rows="7"></textarea>
                                                 </div>
                                                 <div className="form-group">
-                                                    <button type="submit" onClick={this.sunmitPost} className="btn btn-primary btn-lg">Submit</button>
+                                                    <button type="button" onClick={this.sunmitPost} className="btn btn-primary btn-lg">Submit</button>
                                                 </div>
                                             </fieldset>
                                         </form>
@@ -58,7 +63,7 @@ class Post extends Component {
                         </div>
                     </div>) : (
                         <PDFViewer>
-                            <PDF title={this.state.title} content={this.state.content} />
+                            <PDF title={this.state.title} content={this.state.content} image={this.state.image} />
                         </PDFViewer>
                     )
                 }
