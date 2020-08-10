@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+}
+
+.Post{
   max-width: 800px;
   width: 100%;
   display: table;
